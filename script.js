@@ -1718,13 +1718,18 @@ function hashCode (s) {
 };
 
 // Button functions
-function inviteBot() {
-    // Discord bot invite URL
-    window.open('https://discord.com/oauth2/authorize?client_id=1314669751179415642', '_blank');
+function rentBot() {
+    // Discord server for bot rental
+    window.open('https://discord.com/invite/H5CWysahgF', '_blank');
 }
 
 function joinSupport() {
     // Discord support server invite URL
+    window.open('https://discord.com/invite/H5CWysahgF', '_blank');
+}
+
+function requestCustomBot() {
+    // Discord server for custom bot requests
     window.open('https://discord.com/invite/H5CWysahgF', '_blank');
 }
 
