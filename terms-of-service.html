@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Night Discord Bot Rental</title>
+    <meta name="theme-color" content="#05060b">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="index.html" class="site-logo">
+            <img src="logo.png" alt="Night Logo" class="logo-icon">
+            <span class="logo-text">Night</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html#bots" class="nav-link">Bots</a>
+            <a href="index.html#showcase" class="nav-link">Platform</a>
+            <a href="privacy-policy.html" class="nav-link">Privacy</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:12px;">
+            <a href="https://discord.com/invite/H5CWysahgF" target="_blank" class="btn btn-secondary">Join Discord</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="prose-layout">
+
+        <div class="prose-header fade-up">
+            <div class="section-label" style="justify-content:center; margin-bottom:16px;">Legal</div>
+            <h1 class="prose-title">Terms of Service</h1>
+            <p class="prose-subtitle">Please read these before using our service.</p>
+        </div>
+
+        <div class="prose-content fade-up">
+
+            <section>
+                <h2>1. Agreement</h2>
+                <p>By using Night's Discord bots, you agree to these terms. If you don't agree with them, please don't use the service.</p>
+            </section>
+
+            <section>
+                <h2>2. What We Offer</h2>
+                <p>Night rents out Discord bots, including:</p>
+                <ul>
+                    <li>AI chat bots</li>
+                    <li>Music bots</li>
+                    <li>Moderation and server-management bots</li>
+                    <li>Games and entertainment bots</li>
+                    <li>Custom bots built to order</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Your Responsibilities</h2>
+                <p>When you use our bots, you agree to:</p>
+                <ul>
+                    <li>Give us accurate account and server details</li>
+                    <li>Keep your own Discord account secure</li>
+                    <li>Follow Discord's Terms of Service</li>
+                    <li>Not use our bots for anything illegal or harmful</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Payment</h2>
+                <p>Payments are processed securely and subscriptions are billed monthly. If something isn't right, reach out within 7 days of your purchase and we'll sort out a refund where it's fair to do so.</p>
+            </section>
+
+            <section>
+                <h2>5. Uptime</h2>
+                <p>We aim for 99.9% uptime, but we can't promise the service is always available. Outages can happen because of Discord itself or scheduled maintenance.</p>
+            </section>
+
+            <section>
+                <h2>6. Ending Access</h2>
+                <p>We may suspend or end your access if you break these terms or use our bots in a way that harms other servers.</p>
+            </section>
+
+            <section>
+                <h2>7. Questions</h2>
+                <p>Got a question about any of this? Just reach out in our Discord support server.</p>
+                <p><strong>Last updated:</strong> January 2025</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-minimal">
+        <div class="footer-minimal-inner">
+
+            <div class="footer-badge-group">
+                <div class="footer-brand-badge">
+                    <img src="logo.png" alt="Night" class="footer-badge-logo">
+                    <span class="footer-badge-name">Night</span>
+                </div>
+                <span class="footer-divider"></span>
+                <span class="footer-copy">&copy; 2025 Night Bot Rentals</span>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="index.html#bots">Bots</a>
+                <a href="index.html#showcase">Features</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+
+            <a href="https://sa3d95.online/" target="_blank" class="footer-dev-badge">
+                <img src="11.png" alt="Saad Hwareen" class="footer-dev-avatar">
+                <span>By <strong>Saad Hwareen</strong></span>
+            </a>
+
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }, { passive: true });
+        }
+        const toggle = document.getElementById('navToggle');
+        const nav = document.getElementById('navLinks');
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('open');
+                const spans = toggle.querySelectorAll('span');
+                const open = nav.classList.contains('open');
+                spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
+                spans[1].style.opacity = open ? '0' : '';
+                spans[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night — Premium Discord Bot Rental</title>
+    <meta name="description" content="Rent custom Discord bots — AI, music, moderation, gaming and more. We set them up for you and keep them online 24/7.">
+    <meta name="theme-color" content="#05060b">
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Night — Premium Discord Bot Rental">
+    <meta property="og:description" content="Custom Discord bots, set up for you and running 24/7.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nightt.online/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js (no build step — resolved via import map) -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+
+    <!-- Animation library -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3525357385323761"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- ===================== PRELOADER ===================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <img src="logo.png" alt="Night">
+        </div>
+    </div>
+
+    <!-- ===================== PROGRESS BEAM ===================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===================== 3D BACKGROUND (travels with scroll) ===================== -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header" id="header">
+        <a href="index.html" class="site-logo">
+            <img src="logo.png" alt="Night Logo" class="logo-icon">
+            <span class="logo-text">Night</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#bots" class="nav-link">Bots</a>
+            <a href="#showcase" class="nav-link">Platform</a>
+            <a href="#commands" class="nav-link">Commands</a>
+            <a href="privacy-policy.html" class="nav-link">Privacy</a>
+            <a href="terms-of-service.html" class="nav-link">Terms</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1314669751179415642" target="_blank" rel="noopener" class="nav-link nav-cta">Add To Discord</a>
+        </nav>
+        <div class="header-actions">
+            <a href="https://discord.com/oauth2/authorize?client_id=1314669751179415642" target="_blank" rel="noopener" class="btn btn-secondary">Add To Discord</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+        <!-- Hero overlay: legibility scrim + no-WebGL fallback logo -->
+        <div class="hero-stage" aria-hidden="true">
+            <div class="hero-fallback">
+                <img src="logo.png" alt="Night Logo">
+            </div>
+            <div class="hero-vignette"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Premium Discord Bot Rental
+            </div>
+
+            <h1 class="hero-title" data-split>Night</h1>
+
+            <p class="hero-subtitle">
+                Rent powerful, fully custom Discord bots — AI, music, moderation and more.
+                We handle the setup and keep them online 24/7, built to fit your server.
+            </p>
+
+            <div class="hero-cta-wrapper">
+                <a href="#bots" class="btn btn-glow"><span class="btn-text">Explore Bots</span></a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="btn btn-outline">
+                    <span class="discord-glyph">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5a14.6 14.6 0 0 1 4.4 1.4A18 18 0 0 0 4.5 4.9 14.6 14.6 0 0 1 8.9 3.5L8.6 3A19.8 19.8 0 0 0 3.7 4.4 20.4 20.4 0 0 0 .2 18.1a19.9 19.9 0 0 0 6 3l.4-.6a13 13 0 0 1-2-1l.5-.3a14.2 14.2 0 0 0 12 0l.5.3a13 13 0 0 1-2 1l.4.6a19.9 19.9 0 0 0 6-3 20.4 20.4 0 0 0-3.6-13.7ZM8.3 15.1c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+                    </span>
+                    Support Server
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BOTS / FEATURES ===================== -->
+    <section class="features-section" id="bots">
+        <div class="section-container content-left">
+            <div class="section-header gs-reveal">
+                <div class="section-label">Our Bots</div>
+                <h2 class="section-title">A Bot for <span>Every Job</span></h2>
+                <p class="section-desc">Pick the bot you need — each one comes set up and fine-tuned for your server.</p>
+            </div>
+
+            <div class="bubbles">
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24A2.5 2.5 0 0 0 14.5 2Z"></path></svg>
+                    </span>
+                    <span class="bubble-text"><strong>AI Bot</strong><em>AI chat &amp; answers</em></span>
+                </a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    </span>
+                    <span class="bubble-text"><strong>Music Bot</strong><em>Clean audio, 24/7</em></span>
+                </a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8m-4-4v4"></path></svg>
+                    </span>
+                    <span class="bubble-text"><strong>System Bot</strong><em>Moderation &amp; tools</em></span>
+                </a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect></svg>
+                    </span>
+                    <span class="bubble-text"><strong>Gaming Bot</strong><em>Games &amp; events</em></span>
+                </a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                    </span>
+                    <span class="bubble-text"><strong>Giveaway Bot</strong><em>Easy giveaways</em></span>
+                </a>
+                <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="bubble tilt gs-feature">
+                    <span class="bubble-orb">
+                        <img class="bubble-watermark" src="logo.png" alt="" aria-hidden="true">
+                        <span class="bubble-gloss"></span>
+                        <svg class="bubble-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg>
+                    </span>
+                    <span class="bubble-text"><strong>Nickname Bot</strong><em>Auto nicknames</em></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SHOWCASE ===================== -->
+    <section class="showcase-section" id="showcase">
+        <div class="showcase-pin-wrapper">
+            <div class="showcase-left">
+                <div class="section-label">What You Get</div>
+                <h2 class="showcase-title">Your Bot, <span>Always On</span></h2>
+                <ul class="showcase-triggers">
+                    <li class="active" data-index="0">01. Music &amp; audio, 24/7</li>
+                    <li data-index="1">02. AI chat &amp; moderation</li>
+                    <li data-index="2">03. Built around your server</li>
+                </ul>
+            </div>
+            <div class="showcase-right">
+                <div class="glass-orb showcase-orb"></div>
+                <div class="mockup-container glass-panel">
+                    <div class="mockup-header">
+                        <div class="mac-btns"><span></span><span></span><span></span></div>
+                        <div class="mockup-title">Night Bot — Live</div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="album-art pulse-art">
+                            <img src="bekya.jpg" onerror="this.onerror=null;this.src='logo.png'" alt="Bekya — cover" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+                        </div>
+                        <div class="track-name">Bekya</div>
+                        <div class="track-artist">Donia Wael &amp; El Waili</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="ctrl-btn" aria-label="Previous">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                            </button>
+                            <button class="ctrl-btn play" aria-label="Play">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </button>
+                            <button class="ctrl-btn" aria-label="Next">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TERMINAL ===================== -->
+    <section class="terminal-section" id="commands">
+        <div class="section-container content-right">
+            <div class="terminal-text-area gs-reveal">
+                <div class="section-label">Commands</div>
+                <h2>One <span>Command</span> Away</h2>
+                <p>Run everything with simple slash commands. No clutter, no complicated setup — just type and it works.</p>
+            </div>
+            <div class="terminal-window glass-panel gs-reveal">
+                <div class="mockup-header">
+                    <div class="mac-btns"><span></span><span></span><span></span></div>
+                    <div class="mockup-title">#music-commands</div>
+                </div>
+                <div class="chat-body" id="chat-simulation"></div>
+                <div class="chat-input-box">
+                    <span class="chat-typing" id="command-typing"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta-section">
+        <div class="cta-content gs-reveal">
+            <div class="section-label">Get Started</div>
+            <h2>Ready to <span>Get Started?</span></h2>
+            <p>Join our Discord, tell us what you need, and we'll get your bot up and running.</p>
+            <a href="https://discord.com/invite/H5CWysahgF" target="_blank" rel="noopener" class="btn btn-glow">
+                <span class="btn-text">Join Support Server</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer-minimal">
+        <div class="footer-minimal-inner">
+
+            <div class="footer-badge-group">
+                <div class="footer-brand-badge">
+                    <img src="logo.png" alt="Night" class="footer-badge-logo">
+                    <span class="footer-badge-name">Night</span>
+                </div>
+                <span class="footer-divider"></span>
+                <span class="footer-copy">&copy; 2025 Night Bot Rentals</span>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="#bots">Bots</a>
+                <a href="#showcase">Platform</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+
+            <a href="https://sa3d95.online/" target="_blank" rel="noopener" class="footer-dev-badge">
+                <img src="11.png" alt="Saad Hwareen" class="footer-dev-avatar">
+                <span>By <strong>Saad Hwareen</strong></span>
+            </a>
+
+        </div>
+    </footer>
+
+    <script type="module" src="hero3d.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Night Discord Bot Rental</title>
+    <meta name="theme-color" content="#05060b">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="index.html" class="site-logo">
+            <img src="logo.png" alt="Night Logo" class="logo-icon">
+            <span class="logo-text">Night</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html#bots" class="nav-link">Bots</a>
+            <a href="index.html#showcase" class="nav-link">Platform</a>
+            <a href="terms-of-service.html" class="nav-link">Terms</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:12px;">
+            <a href="https://discord.com/invite/H5CWysahgF" target="_blank" class="btn btn-secondary">Join Discord</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="prose-layout">
+
+        <div class="prose-header fade-up">
+            <div class="section-label" style="justify-content:center; margin-bottom:16px;">Legal</div>
+            <h1 class="prose-title">Privacy Policy</h1>
+            <p class="prose-subtitle">How we handle your data when you use our bots.</p>
+        </div>
+
+        <div class="prose-content fade-up">
+
+            <section>
+                <h2>1. What We Collect</h2>
+                <p>We only collect what we need to run the bots for you:</p>
+                <ul>
+                    <li>Your Discord server and user IDs, so the bot knows where it's working</li>
+                    <li>Anything you send us through support</li>
+                    <li>Basic usage info, like which commands get used</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. How We Use It</h2>
+                <p>We use this information to run and improve the service:</p>
+                <ul>
+                    <li>To set up and manage your subscription</li>
+                    <li>To keep the bots fast and online</li>
+                    <li>To answer your support questions</li>
+                    <li>To meet our legal and security obligations</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Sharing Your Data</h2>
+                <p>We <strong>don't</strong> sell or trade your data. We only share it with the trusted services we use to keep the bots running, or when we're legally required to — for example, by Discord or by law.</p>
+            </section>
+
+            <section>
+                <h2>4. Keeping It Safe</h2>
+                <p>We use standard encryption to protect your data, and access is limited to the people who actually run the service.</p>
+            </section>
+
+            <section>
+                <h2>5. How Long We Keep It</h2>
+                <p>We only keep your data as long as we need it. Payment records are kept as required by law, and routine logs (like command errors) are deleted within 14–30 days.</p>
+            </section>
+
+            <section>
+                <h2>6. Your Choices</h2>
+                <p>You can ask us to delete your data at any time — just open a ticket in our Discord support server.</p>
+                <p><strong>Last updated:</strong> January 2025</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-minimal">
+        <div class="footer-minimal-inner">
+
+            <div class="footer-badge-group">
+                <div class="footer-brand-badge">
+                    <img src="logo.png" alt="Night" class="footer-badge-logo">
+                    <span class="footer-badge-name">Night</span>
+                </div>
+                <span class="footer-divider"></span>
+                <span class="footer-copy">&copy; 2025 Night Bot Rentals</span>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="index.html#bots">Bots</a>
+                <a href="index.html#showcase">Features</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+
+            <a href="https://sa3d95.online/" target="_blank" class="footer-dev-badge">
+                <img src="11.png" alt="Saad Hwareen" class="footer-dev-avatar">
+                <span>By <strong>Saad Hwareen</strong></span>
+            </a>
+
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll state for prose pages
+        const header = document.getElementById('header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }, { passive: true });
+        }
+        // Mobile nav
+        const toggle = document.getElementById('navToggle');
+        const nav = document.getElementById('navLinks');
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('open');
+                const spans = toggle.querySelectorAll('span');
+                const open = nav.classList.contains('open');
+                spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
+                spans[1].style.opacity = open ? '0' : '';
+                spans[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
+            });
+        }
+    </script>
+</body>
+</html>
